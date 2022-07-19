@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    font-family: 'Montserrat', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+@layer components {
+    .btn-sec{
+        @apply py-4 px-6 rounded-xl bg-white border transition-all duration-200 ease-in shadow-[4px_4px_0_0_#e6e6e6,_3px_3px_0_0_#e6e6e6,_2px_2px_0_0_#e6e6e6] lg:hover:shadow-none lg:hover:translate-x-[0.3125rem] lg:hover:translate-y-[0.3125rem] border-white text-sm font-semibold text-center cursor-pointer text-purple
+    }
+
+  
+      .tabs-btn {
+        @apply grid grid-cols-[1fr_1fr_1fr_1fr_1fr]  p-5 md:p-0 md:flex mb-6 justify-between  overflow-x-scroll md:overflow-x-visible w-full
+      }
+
+    .btn-tertiary{
+        @apply py-4 px-6 rounded-xl bg-transparent border transition-all duration-200 ease-in shadow-[4px_4px_0_0_#6b277c,_3px_3px_0_0_#6b277c,_2px_2px_0_0_#6b277c] lg:hover:shadow-none lg:hover:translate-x-[0.3125rem] lg:hover:translate-y-[0.3125rem] border-purple text-sm font-semibold text-center cursor-pointer text-purple
+    }
+
+    .btn-primary{
+        @apply py-4 px-6 rounded-xl bg-purple border transition-all duration-200 ease-in shadow-[4px_4px_0_0_#6b277c,_3px_3px_0_0_#6b277c,_2px_2px_0_0_#6b277c] lg:hover:shadow-none lg:hover:translate-x-[0.3125rem] lg:hover:translate-y-[0.3125rem] border-purple text-sm font-semibold text-center cursor-pointer text-white
+    }
+}
+
+
+/* nav */
+.active-nav {
+    opacity: 1;
+    display: block;
+    transform: translateY(20px);
+  }
+  
+  .show-sidebar {
+    display: block;
+  }
+
+
+  /* tab */
+[data-tab-content] {
+    display: none;
+  }
+  
+  .active[data-tab-content] {
+    display: block;
+  }
+  
+  .tab{
+    position: relative;
+    flex: 1;
+  }
+  
+  .tab.active {
+    border-bottom: 1px solid #9b3994;
+  }
+  
+  .tab.active >.tab-text, .tab:hover > .tab-text {
+    font-weight: 600;
+    color: #9b3994;
+  }
+  
+  
+  .tab-content {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .tabs-btn::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .tabs-btn {
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
+  }
+
+
+  /* faq */
+.faq-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.faq .cta-btn {
+  display: flex;
+  margin: 50px auto 20px;
+}
+
+.toggle {
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 15px 0;
+  text-align: left;
+}
+.content {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+
+@media (max-width: 640px) {
+  .faq-container {
+    grid-template-columns: 1fr;
+  gap: 0;
+  }
+
+}
